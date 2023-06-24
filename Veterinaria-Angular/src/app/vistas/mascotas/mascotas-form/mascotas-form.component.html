@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <nav class="breadcrumb">
+        <a routerLink="/">Inicio</a> /
+        <a routerLink="/mascotas/mascotas-tabla">Mascotas</a> /
+        <span>Agregar</span>
+    </nav>
+    <div class="row">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Registro de Mascotas</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <form class="register-form m-4" [formGroup]="mascotaForm" (ngSubmit)="submitForm()">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>Nombre </mat-label>
+                                <input matInput formControlName="nombre" required [readonly]="detalle==1">
+                                <mat-icon matSuffix>face</mat-icon>
+                                <mat-error *ngIf="mascotaForm.get('nombre')?.hasError('required')">
+                                    Nombre es requerido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>especie </mat-label>
+                                <input matInput formControlName="especie" required [readonly]="detalle==1">
+                                <mat-icon matSuffix>merge_type</mat-icon>
+                                <mat-error *ngIf="mascotaForm.get('especie')?.hasError('required')">
+                                    especie es requerido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>raza </mat-label>
+                                <input matInput formControlName="raza" required [readonly]="detalle==1">
+                                <mat-icon matSuffix>calendar_view_day</mat-icon>
+                                <mat-error *ngIf="mascotaForm.get('raza')?.hasError('required')">
+                                    raza es requerido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>fechaNacimiento </mat-label>
+                                <input matInput formControlName="fechaNacimiento" required [readonly]="detalle==1">
+                                <mat-icon matSuffix>calendar_today</mat-icon>
+                                <mat-error *ngIf="mascotaForm.get('fechaNacimiento')?.hasError('required')">
+                                    fechaNacimiento es requerido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>idDueno </mat-label>
+                                <input matInput formControlName="idDueno" required [readonly]="detalle==1">
+                                <mat-error *ngIf="mascotaForm.get('idDueno')?.hasError('required')">
+                                    idDueno es requerido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2" *ngIf="detalle!=1 && !loading">
+                            <button mat-raised-button color="primary" type="submit">Guardar / Actualizar</button>
+
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 paddingboton" *ngIf="!loading">
+                            <button mat-raised-button color="warn" type="button" (click)="IrRuta('/mascotas/mascotas-tabla')">
+                             {{detalle!=1?'Cancelar':'Volver'}}  
+                            </button>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2" *ngIf="loading">
+                            <mat-spinner color="warn"></mat-spinner>
+                        </div>
+                    </div>
+
+
+                </form>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>

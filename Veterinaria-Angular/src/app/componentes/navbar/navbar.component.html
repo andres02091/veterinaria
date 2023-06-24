@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Veterinaria</span>
+    <span class="barra-spacer"></span>
+    <button mat-stroked-button [matMenuTriggerFor]="menu">Mascotas</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="IrRuta('/mascotas/mascotas-tabla')">Ver Mascotas</button>
+        <button mat-menu-item (click)="IrRuta('/mascotas/mascotas-agregar')">Agregar Mascota</button>
+    </mat-menu>
+
+</mat-toolbar>
