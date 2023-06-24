@@ -18,6 +18,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MascotasService } from 'src/app/servicios/mascotas.service';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 @NgModule({
   declarations: [
     MascotasTablaComponent,
@@ -40,8 +44,12 @@ import { MascotasService } from 'src/app/servicios/mascotas.service';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [MascotasService],
+  providers: [
+    MascotasService
+  ],
 })
 export class MascotasModule { }

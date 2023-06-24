@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Pruebas Tecnicas\\Veterinaria\\Veterinaria.csproj": {}
+    "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\Veterinaria.csproj": {}
   },
   "projects": {
-    "D:\\Pruebas Tecnicas\\Veterinaria\\Veterinaria.csproj": {
+    "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\Veterinaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pruebas Tecnicas\\Veterinaria\\Veterinaria.csproj",
+        "projectUniqueName": "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\Veterinaria.csproj",
         "projectName": "Veterinaria",
-        "projectPath": "D:\\Pruebas Tecnicas\\Veterinaria\\Veterinaria.csproj",
+        "projectPath": "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\Veterinaria.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Pruebas Tecnicas\\Veterinaria\\obj\\",
+        "outputPath": "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

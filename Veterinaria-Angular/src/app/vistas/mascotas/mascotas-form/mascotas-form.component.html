@@ -3,7 +3,9 @@
     <nav class="breadcrumb">
         <a routerLink="/">Inicio</a> /
         <a routerLink="/mascotas/mascotas-tabla">Mascotas</a> /
-        <span>Agregar</span>
+        <span *ngIf="idMascota==0 && detalle!=1">Agregar</span>
+        <span *ngIf="idMascota!=0 && detalle!=1">Editar</span>
+        <span *ngIf="detalle==1">Ver</span>
     </nav>
     <div class="row">
         <mat-card>
@@ -49,9 +51,11 @@
 
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                             <mat-form-field class="example-full-width mb-3" appearance="outline">
-                                <mat-label>fechaNacimiento </mat-label>
-                                <input matInput formControlName="fechaNacimiento" required [readonly]="detalle==1">
-                                <mat-icon matSuffix>calendar_today</mat-icon>
+                                <mat-label>Fecha Nacimiento</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" required
+                                    [readonly]="detalle==1" (focus)="picker.open()">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
                                 <mat-error *ngIf="mascotaForm.get('fechaNacimiento')?.hasError('required')">
                                     fechaNacimiento es requerido
                                 </mat-error>
@@ -62,7 +66,7 @@
 
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                             <mat-form-field class="example-full-width mb-3" appearance="outline">
-                                <mat-label>idDueno </mat-label>
+                                <mat-label>id Dueño </mat-label>
                                 <input matInput formControlName="idDueno" required [readonly]="detalle==1">
                                 <mat-error *ngIf="mascotaForm.get('idDueno')?.hasError('required')">
                                     idDueno es requerido
@@ -76,8 +80,9 @@
 
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 paddingboton" *ngIf="!loading">
-                            <button mat-raised-button color="warn" type="button" (click)="IrRuta('/mascotas/mascotas-tabla')">
-                             {{detalle!=1?'Cancelar':'Volver'}}  
+                            <button mat-raised-button color="warn" type="button"
+                                (click)="IrRuta('/mascotas/mascotas-tabla')">
+                                {{detalle!=1?'Cancelar':'Volver'}}
                             </button>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2" *ngIf="loading">

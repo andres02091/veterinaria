@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v8ukuV3sH1bVqdOZINB5cb0Ht+eW2R2ImaWw08AvukiIN/33t18Pqn2cu92Tz4jOxmhbp5O+NSBcMEieow3FEw==",
+  "dgSpecHash": "ydhPuxo5yQgVbNjc3zXoXFPRYcxrRhNBnnGh9/v/uygquR8xtFVeAu7x6GCI8JAHCETnRQpkm17tu8Z52jssfA==",
   "success": true,
-  "projectFilePath": "D:\\Pruebas Tecnicas\\Veterinaria\\Veterinaria.csproj",
+  "projectFilePath": "D:\\Pruebas Tecnicas\\Veterinaria-github\\Veterinaria\\Veterinaria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

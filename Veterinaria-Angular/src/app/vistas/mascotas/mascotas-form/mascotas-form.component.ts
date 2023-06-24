@@ -19,7 +19,7 @@ export class MascotasFormComponent implements OnInit {
 
   ngOnInit() {
     this.mascotaForm = this.formBuilder.group({
-      id:[''],
+      id:['0'],
       nombre: ['', Validators.required],
       especie: ['', Validators.required],
       raza: ['', Validators.required],
@@ -63,12 +63,22 @@ export class MascotasFormComponent implements OnInit {
         this.loading=false;
         this.IrRuta('/mascotas/mascotas-tabla');
       },error=>{
-        this.snackBar.open("Error En Actualizacion", '', {
-          duration: 2000,
-          verticalPosition: 'bottom',
-          horizontalPosition: 'center',
-          panelClass: 'snackbar-danger'
-        });
+        if(error.title){
+          this.snackBar.open(error.title, '', {
+            duration: 2000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            panelClass: 'snackbar-danger'
+          });
+        }else{
+          this.snackBar.open("Error En Actualizacion", '', {
+            duration: 2000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            panelClass: 'snackbar-danger'
+          });
+        }
+        
         this.loading=false;
       })
     }else{
@@ -82,12 +92,21 @@ export class MascotasFormComponent implements OnInit {
         this.loading=false;
         this.IrRuta('/mascotas/mascotas-tabla');
       },error=>{
-        this.snackBar.open("Error Al Crear Mascota", '', {
-          duration: 2000,
-          verticalPosition: 'bottom',
-          horizontalPosition: 'center',
-          panelClass: 'snackbar-danger'
-        });
+        if(error.title){
+          this.snackBar.open(error.title, '', {
+            duration: 2000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            panelClass: 'snackbar-danger'
+          });
+        }else{
+          this.snackBar.open("Error Al Crear", '', {
+            duration: 2000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            panelClass: 'snackbar-danger'
+          });
+        }
         this.loading=false;
       })
     }
